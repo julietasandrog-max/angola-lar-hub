@@ -9,12 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-300",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Real Estate specific variants
+        cta: "bg-accent text-accent-foreground hover:bg-accent-hover transform hover:scale-105 transition-all duration-300 font-semibold shadow-lg",
+        hero: "bg-accent text-accent-foreground hover:bg-accent-hover px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300",
+        property: "bg-primary text-primary-foreground hover:bg-primary-hover rounded-full text-sm font-medium transition-all duration-300",
+        success: "bg-success text-success-foreground hover:bg-success/90 transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
