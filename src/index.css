@@ -10,59 +10,59 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Brand Colors - Professional Blue Palette */
-    --background: 0 0% 100%;
-    --foreground: 213 30% 15%;
+    --background: 0 0% 98%;
+    --foreground: 220 25% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 213 30% 15%;
+    --card-foreground: 220 25% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 30% 15%;
+    --popover-foreground: 220 25% 8%;
 
-    /* Primary - Professional Blue */
-    --primary: 213 85% 45%;
+    /* Primary - Deep Blue for Strong Contrast */
+    --primary: 220 90% 35%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 213 85% 40%;
+    --primary-hover: 220 90% 30%;
 
-    /* Secondary - Light Blue/Gray */
-    --secondary: 213 20% 96%;
-    --secondary-foreground: 213 30% 25%;
+    /* Secondary - Warm Gray for Better Contrast */
+    --secondary: 210 15% 94%;
+    --secondary-foreground: 220 25% 20%;
 
-    --muted: 213 15% 95%;
-    --muted-foreground: 213 15% 50%;
+    --muted: 210 15% 92%;
+    --muted-foreground: 220 15% 45%;
 
-    /* Accent - Orange for CTAs and highlights */
-    --accent: 25 95% 55%;
+    /* Accent - Vibrant Orange for Strong CTAs */
+    --accent: 20 100% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 25 95% 50%;
+    --accent-hover: 20 100% 45%;
 
-    /* Success - Green for verified badges */
-    --success: 142 76% 36%;
+    /* Success - Bright Green for High Visibility */
+    --success: 140 85% 35%;
     --success-foreground: 0 0% 100%;
 
-    /* Warning - Amber for scarcity triggers */
-    --warning: 35 91% 55%;
+    /* Warning - Bold Amber for Attention */
+    --warning: 35 100% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 90% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 213 15% 90%;
-    --input: 213 15% 94%;
-    --ring: 213 85% 45%;
+    --border: 220 15% 85%;
+    --input: 220 15% 92%;
+    --ring: 220 90% 35%;
 
     --radius: 0.75rem;
 
     /* Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(213 85% 45%), hsl(213 85% 55%));
-    --card-shadow: 0 4px 20px -2px hsl(213 25% 25% / 0.08);
-    --card-shadow-hover: 0 8px 30px -4px hsl(213 25% 25% / 0.15);
-    --property-badge-new: hsl(142 76% 36%);
-    --property-badge-featured: hsl(25 95% 55%);
+    --hero-gradient: linear-gradient(135deg, hsl(220 90% 35%), hsl(220 90% 45%), hsl(20 100% 50%));
+    --card-shadow: 0 6px 25px -3px hsl(220 25% 25% / 0.12);
+    --card-shadow-hover: 0 12px 40px -6px hsl(220 25% 25% / 0.20);
+    --property-badge-new: hsl(140 85% 35%);
+    --property-badge-featured: hsl(20 100% 50%);
     
     /* Trust indicators */
-    --verified-badge: hsl(142 76% 36%);
-    --trust-border: hsl(213 85% 45%);
+    --verified-badge: hsl(140 85% 35%);
+    --trust-border: hsl(220 90% 35%);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -130,7 +130,25 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: hsl(var(--foreground));
+  }
+
+  .font-bold {
+    font-weight: 800;
+  }
+
+  .font-semibold {
+    font-weight: 600;
   }
 }
 
@@ -142,44 +160,59 @@ All colors MUST be HSL.
   
   /* Property Card Enhancements */
   .property-card {
-    @apply bg-card rounded-lg transition-all duration-300;
+    @apply bg-card rounded-xl border-2 border-transparent transition-all duration-300;
     box-shadow: var(--card-shadow);
   }
   
   .property-card:hover {
     box-shadow: var(--card-shadow-hover);
-    @apply -translate-y-1;
+    @apply -translate-y-2 border-primary/20;
   }
   
   /* Badge Styles */
   .badge-new {
-    @apply text-xs font-semibold px-2 py-1 rounded-full text-white;
+    @apply text-xs font-bold px-3 py-1.5 rounded-full text-white shadow-lg;
     background-color: var(--property-badge-new);
   }
   
   .badge-featured {
-    @apply text-xs font-semibold px-2 py-1 rounded-full text-white;
+    @apply text-xs font-bold px-3 py-1.5 rounded-full text-white shadow-lg;
     background-color: var(--property-badge-featured);
   }
   
   .badge-verified {
-    @apply text-xs font-semibold px-2 py-1 rounded-full text-white inline-flex items-center gap-1;
+    @apply text-xs font-bold px-3 py-1.5 rounded-full text-white inline-flex items-center gap-1 shadow-lg;
     background-color: var(--verified-badge);
   }
   
   /* Search Bar Enhancement */
   .search-bar {
-    @apply relative bg-white rounded-lg border border-border shadow-lg;
+    @apply relative bg-white rounded-xl border-2 border-primary/20 shadow-xl;
   }
   
   /* Trust Indicators */
   .trust-indicator {
-    @apply border-l-4 pl-4;
+    @apply border-l-4 pl-6 py-2;
     border-left-color: var(--trust-border);
   }
   
   /* Scarcity Elements */
   .scarcity-indicator {
-    @apply bg-warning/10 text-warning-foreground border border-warning/20 rounded-md px-3 py-2 text-sm;
+    @apply bg-warning/15 text-warning-foreground border-2 border-warning/30 rounded-lg px-4 py-2 text-sm font-semibold shadow-md;
+  }
+
+  /* High Contrast Text */
+  .text-high-contrast {
+    color: hsl(var(--foreground));
+    font-weight: 600;
+  }
+
+  /* Animated GIF Container */
+  .hero-gif-container {
+    @apply absolute inset-0 overflow-hidden rounded-2xl;
+  }
+
+  .hero-gif-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-accent/70 z-10;
   }
 }

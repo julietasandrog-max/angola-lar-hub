@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Real Estate specific variants
         cta: "bg-accent text-accent-foreground hover:bg-accent-hover transform hover:scale-105 transition-all duration-300 font-semibold shadow-lg",
-        hero: "bg-accent text-accent-foreground hover:bg-accent-hover px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300",
+        hero: "bg-accent text-accent-foreground hover:bg-accent-hover px-10 py-5 text-xl font-black rounded-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 border-2 border-accent-hover",
         property: "bg-primary text-primary-foreground hover:bg-primary-hover rounded-full text-sm font-medium transition-all duration-300",
         success: "bg-success text-success-foreground hover:bg-success/90 transition-all duration-300",
       },

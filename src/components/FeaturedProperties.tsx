@@ -78,10 +78,10 @@ const FeaturedProperties = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Imóveis em <span className="text-primary">Destaque</span>
+          <h2 className="text-4xl lg:text-5xl font-black text-foreground mb-6">
+            Imóveis em <span className="text-primary drop-shadow-sm">Destaque</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-semibold">
             Seleção especial de imóveis verificados com as melhores condições e localizações.
           </p>
         </div>
@@ -98,7 +98,7 @@ const FeaturedProperties = () => {
 
         {/* View More Button */}
         <div className="text-center mt-12">
-          <button className="text-primary hover:text-primary-hover font-semibold text-lg transition-colors">
+          <button className="text-primary hover:text-primary-hover font-bold text-xl transition-colors hover:underline decoration-2 underline-offset-4">
             Ver Todos os Imóveis →
           </button>
         </div>
