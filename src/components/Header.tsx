@@ -8,9 +8,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-3xl font-black text-primary">
-              Casa<span className="text-accent drop-shadow-sm">Angola</span>
-            </h1>
+            <img src="/src/assets/logo.png" alt="AngoHomes" className="h-10" />
           </div>
 
           {/* Desktop Navigation */}
